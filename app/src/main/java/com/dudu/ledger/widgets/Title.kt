@@ -9,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import com.dudu.ledger.MyContext
 import com.dudu.ledger.R
+import com.dudu.ledger.activities.Menu
 import com.dudu.ledger.activities.NewLedgerActivity
 
 class Title(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs) {
@@ -23,7 +24,8 @@ class Title(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs
         val titleNewButton = findViewById<ImageButton>(R.id.title_button_new)
         titleText.text = text
         titleMenuButton.setOnClickListener {
-
+            val intent = Intent(MyContext.context, Menu::class.java)
+            MyContext.context.startActivity(intent)
         }
         titleNewButton.setOnClickListener {
             val intent = Intent(MyContext.context, NewLedgerActivity::class.java)
