@@ -14,6 +14,6 @@ class MyContext : Application() {
 
     companion object {
         @SuppressLint("StaticFieldLeak")
-        lateinit var context:Context
+        lateinit var context: Context
     }
 }

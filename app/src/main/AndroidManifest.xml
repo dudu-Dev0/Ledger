@@ -15,6 +15,12 @@
             android:theme="@style/Theme.Ledger"
             tools:targetApi="33">
         <activity
+                android:name=".activities.LedgerDetails"
+                android:exported="false"/>
+        <activity
+                android:name=".activities.TypePicker"
+                android:exported="false"/>
+        <activity
                 android:name=".activities.NewLedgerActivity"
                 android:exported="false"/>
         <activity

@@ -14,12 +14,8 @@
             app:titleText="账单"
             app:buttonVis="VISIBLE"/>
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_main_ledger"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_main_ledger"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-</ScrollView>
+            android:layout_height="wrap_content"/>
 </LinearLayout>

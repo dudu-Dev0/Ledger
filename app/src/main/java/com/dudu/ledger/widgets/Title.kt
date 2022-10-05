@@ -26,8 +26,8 @@ class Title(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs
 
         }
         titleNewButton.setOnClickListener {
-            val intent = Intent(MyContext.context,NewLedgerActivity::class.java)
-            MyContext.context?.startActivity(intent)
+            val intent = Intent(MyContext.context, NewLedgerActivity::class.java)
+            MyContext.context.startActivity(intent)
         }
         if (buttonVis == "VISIBLE") {
             titleMenuButton.visibility = VISIBLE

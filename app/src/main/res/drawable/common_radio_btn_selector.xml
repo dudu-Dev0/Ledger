@@ -2,8 +2,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
             android:state_checked="false"
-            android:drawable="@drawable/grey_circle_corner"/>
+            android:drawable="@drawable/radio_btn_off"/>
     <item
             android:state_checked="true"
-            android:drawable="@drawable/black_circle_corner"/>
+            android:drawable="@drawable/radio_btn_on"/>
 </selector>
