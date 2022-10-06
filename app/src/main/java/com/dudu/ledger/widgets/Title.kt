@@ -2,6 +2,7 @@ package com.dudu.ledger.widgets
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
@@ -25,10 +26,16 @@ class Title(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs
         titleText.text = text
         titleMenuButton.setOnClickListener {
             val intent = Intent(MyContext.context, Menu::class.java)
+            if((Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)){
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
             MyContext.context.startActivity(intent)
         }
         titleNewButton.setOnClickListener {
             val intent = Intent(MyContext.context, NewLedgerActivity::class.java)
+            if((Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)){
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
             MyContext.context.startActivity(intent)
         }
         if (buttonVis == "VISIBLE") {

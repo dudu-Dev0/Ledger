@@ -12,10 +12,13 @@
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/drawable/grey_circle_corner_background.xml" value="0.119" />
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/drawable/ic_launcher_background.xml" value="0.12" />
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/drawable/ledger_sort_radio_background.xml" value="0.12" />
+        <entry key="..\:/JavaProject/Ledger/app/src/main/res/layout-v21/activity_do_you_really_want_to_delete.xml" value="0.10729166666666666" />
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/layout/activity_cost_analysis.xml" value="0.1" />
+        <entry key="..\:/JavaProject/Ledger/app/src/main/res/layout/activity_do_you_really_want_to_delete.xml" value="0.2" />
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/layout/activity_ledger_details.xml" value="0.5" />
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/layout/activity_menu.xml" value="0.5" />
+        <entry key="..\:/JavaProject/Ledger/app/src/main/res/layout/activity_more_option.xml" value="0.33" />
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/layout/activity_new_ledger.xml" value="0.5" />
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/layout/activity_type_picker.xml" value="0.1453804347826087" />
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/layout/ledger_item.xml" value="0.33" />
