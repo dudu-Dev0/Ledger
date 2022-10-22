@@ -62,13 +62,13 @@ class CostAnalysis : AppCompatActivity() {
             eatAmount = eatAmount + eat[i].amount
         }
 
-        pieChart.addItemType(ItemType("生活便利", lifeAmount.toFloat(),getRandomColor()))
-        pieChart.addItemType(ItemType("文玩娱乐", playAmount.toFloat(),getRandomColor()))
-        pieChart.addItemType(ItemType("学习文具", studyAmount.toFloat(),getRandomColor()))
-        pieChart.addItemType(ItemType("美食吃喝", eatAmount.toFloat(),getRandomColor()))
+        pieChart.addItemType(ItemType("生活便利", lifeAmount.toFloat(),getRandomColor()[0]))
+        pieChart.addItemType(ItemType("文玩娱乐", playAmount.toFloat(),getRandomColor()[1]))
+        pieChart.addItemType(ItemType("学习文具", studyAmount.toFloat(),getRandomColor()[2]))
+        pieChart.addItemType(ItemType("美食吃喝", eatAmount.toFloat(),getRandomColor()[3]))
     }
-    fun getRandomColor():Int{
-        val color = arrayOf(Color.BLUE,Color.CYAN,Color.GRAY,Color.GREEN,Color.RED,Color.YELLOW).random()
+    fun getRandomColor() : List<Int>{
+        val color = mutableListOf<Int>(Color.parseColor("#ff7f27"),Color.parseColor("#00affd"),Color.parseColor("#ffca18"),Color.parseColor("#5cd13e"))
         return color
     }
 }

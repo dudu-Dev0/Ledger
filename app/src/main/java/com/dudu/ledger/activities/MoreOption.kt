@@ -1,6 +1,5 @@
 package com.dudu.ledger.activities
 
-import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.animation.OvershootInterpolator
@@ -51,10 +50,10 @@ class MoreOption : AppCompatActivity() {
         delete.setOnClickListener {
             intent = Intent(this,DoYouReallyWantToDelete::class.java)
             intent.putExtra("ledger",ledger)
-            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this,delete, "delete").toBundle())
+            startActivity(intent)
         }
         back.setOnClickListener {
-            finish()
+            finishAfterTransition()
         }
     }
 

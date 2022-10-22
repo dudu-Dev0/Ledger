@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.NewGoal">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <com.dudu.ledger.widgets.Title
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:buttonVis="GONE"
+                app:titleText="新计划"/>
+
+        <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="你的计划"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+
+        <EditText
+                android:id="@+id/your_goal_edittext"
+                android:background="@drawable/edittext_background"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:textSize="25sp"
+                android:padding="5dp"
+                android:singleLine="true"/>
+
+        <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="目标金额"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+
+        <EditText
+                android:id="@+id/goal_amount_edittext"
+                android:background="@drawable/edittext_background"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:textSize="25sp"
+                android:padding="5dp"
+                android:digits="1234567890."
+                android:singleLine="true"/>
+
+        <Button
+                android:id="@+id/finish_add_new_goal"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:text="完成"
+                android:layout_margin="5dp"
+                android:textColor="@color/white"
+                android:background="@drawable/blue_button"/>
+    </LinearLayout>
+</ScrollView>

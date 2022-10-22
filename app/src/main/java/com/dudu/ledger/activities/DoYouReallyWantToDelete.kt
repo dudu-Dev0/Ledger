@@ -2,7 +2,6 @@ package com.dudu.ledger.activities
 
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.dudu.ledger.ActivityCollector
 import com.dudu.ledger.AddClickScale
@@ -18,7 +17,7 @@ class DoYouReallyWantToDelete : AppCompatActivity() {
 
         val ledger = intent.getSerializableExtra("ledger") as Ledger
 
-        val delete: ImageButton = findViewById(R.id.confirm_delete)
+        val delete: Button = findViewById(R.id.confirm_delete)
         val cancel: Button = findViewById(R.id.cancel_del)
 
         AddClickScale.addClickScale(delete)

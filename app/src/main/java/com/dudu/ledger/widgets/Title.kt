@@ -16,9 +16,9 @@ import com.dudu.ledger.activities.NewLedgerActivity
 class Title(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs) {
     init {
         LayoutInflater.from(context).inflate(R.layout.watch_title, this)
-        val ta = context.obtainStyledAttributes(attrs, R.styleable.title)
-        val text = ta.getString(R.styleable.title_titleText)
-        val buttonVis = ta.getString(R.styleable.title_buttonVis)
+        val ta = context.obtainStyledAttributes(attrs, R.styleable.Title)
+        val text = ta.getString(R.styleable.Title_titleText)
+        val buttonVis = ta.getString(R.styleable.Title_buttonVis)
         ta.recycle()
         val titleText = findViewById<TextView>(R.id.title_text)
         val titleMenuButton = findViewById<ImageButton>(R.id.title_button_menu)

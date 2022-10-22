@@ -15,9 +15,15 @@
             android:theme="@style/CommonTheme"
             tools:targetApi="33">
         <activity
+                android:name=".activities.GoalActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".activities.NewGoal"
+                android:exported="false"/>
+        <activity
                 android:name=".activities.DoYouReallyWantToDelete"
                 android:exported="false"
-                android:theme="@style/ThemeWithoutSwipeDis"/>
+                android:theme="@style/ThemeWithoutAnim"/>
         <activity
                 android:name=".activities.MoreOption"
                 android:exported="false"

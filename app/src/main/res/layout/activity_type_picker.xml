@@ -58,6 +58,16 @@
                     android:text="美食吃喝"
                     android:textSize="25sp"
                     android:textColor="@color/white"/>
+            <RadioButton
+                    android:id="@+id/radiobutton_pocket_money"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_margin="3dp"
+                    android:button="@drawable/common_radio_btn_selector"
+                    android:background="@drawable/grey_circle_corner_background"
+                    android:text="存入零花钱"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"/>
         </RadioGroup>
     </ScrollView>
 </FrameLayout>
