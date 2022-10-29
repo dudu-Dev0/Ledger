@@ -16,4 +16,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Ledger"
 include ':app'
-include ':CrashReminder'

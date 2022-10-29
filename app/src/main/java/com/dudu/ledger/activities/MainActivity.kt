@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         ledgerRecyclerView = findViewById(R.id.recycler_main_ledger)
-
         initData()
     }
 

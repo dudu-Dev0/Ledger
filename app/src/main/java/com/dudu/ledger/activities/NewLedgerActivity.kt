@@ -38,20 +38,8 @@ class NewLedgerActivity : AppCompatActivity() {
 
         initWidgets()
 
-        if(!getSharedPreferences("goal", MODE_PRIVATE).getBoolean("is_existing",false)) chooseTypeText.visibility = View.GONE
-        if(!getSharedPreferences("goal", MODE_PRIVATE).getBoolean("is_existing",false)) chooseType.visibility = View.GONE
-
-
         cost.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                chooseType.visibility = View.VISIBLE
-                chooseTypeText.visibility = View.VISIBLE
-            } else{
-                if(!getSharedPreferences("goal", MODE_PRIVATE).getBoolean("is_existing",false)) chooseTypeText.visibility = View.GONE
-                if(!getSharedPreferences("goal", MODE_PRIVATE).getBoolean("is_existing",false)) chooseType.visibility = View.GONE
-            }
             typeText.text = "请选择"
-
         }
 
         chooseType.setOnClickListener {
@@ -76,19 +64,6 @@ class NewLedgerActivity : AppCompatActivity() {
                     }
                     ledger.save()
                     finish()
-                    if (typeText.text.toString() == "存入零花钱") {
-
-                        with(getSharedPreferences("goal", MODE_PRIVATE).edit()) {
-                            putFloat(
-                                "now_amount",
-                                getSharedPreferences("goal", MODE_PRIVATE).getFloat(
-                                    "now_amount",
-                                    0F
-                                ) + amountEditText.text.toString().toFloat()
-                            )
-                            apply()
-                        }
-                    }
                 } else {
                     Toast.makeText(this, "请选择收支类型", Toast.LENGTH_LONG).show()
                 }
