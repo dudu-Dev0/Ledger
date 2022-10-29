@@ -9,65 +9,9 @@
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-        <RadioGroup
-                android:id="@+id/type_picker_radio_group"
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/type_recyclerview"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <RadioButton
-                    android:id="@+id/radiobutton_life"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_margin="5dp"
-                    android:button="@drawable/common_radio_btn_selector"
-                    android:background="@drawable/grey_circle_corner_background"
-                    android:text="生活便利"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"/>
-
-            <RadioButton
-                    android:id="@+id/radiobutton_play"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_margin="5dp"
-                    android:button="@drawable/common_radio_btn_selector"
-                    android:background="@drawable/grey_circle_corner_background"
-                    android:text="文玩娱乐"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"/>
-
-            <RadioButton
-                    android:id="@+id/radiobutton_study"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_margin="5dp"
-                    android:button="@drawable/common_radio_btn_selector"
-                    android:background="@drawable/grey_circle_corner_background"
-                    android:text="学习文具"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"/>
-
-            <RadioButton
-                    android:id="@+id/radiobutton_eat"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_margin="3dp"
-                    android:button="@drawable/common_radio_btn_selector"
-                    android:background="@drawable/grey_circle_corner_background"
-                    android:text="美食吃喝"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"/>
-            <RadioButton
-                    android:id="@+id/radiobutton_pocket_money"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_margin="3dp"
-                    android:button="@drawable/common_radio_btn_selector"
-                    android:background="@drawable/grey_circle_corner_background"
-                    android:text="存入零花钱"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"/>
-        </RadioGroup>
+                android:layout_height="match_parent"/>
     </ScrollView>
 </FrameLayout>

@@ -53,7 +53,8 @@ class MoreOption : AppCompatActivity() {
             startActivity(intent)
         }
         back.setOnClickListener {
-            finishAfterTransition()
+            finish()
+            overridePendingTransition(0,0)
         }
     }
 
