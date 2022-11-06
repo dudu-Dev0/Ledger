@@ -27,7 +27,8 @@ object Constants {
         Type("发红包",R.drawable.redpack),
         Type("运动",R.drawable.sports),
         Type("旅行",R.drawable.travel),
-        Type("购物",R.drawable.shopping))
+        Type("购物",R.drawable.shopping),
+        Type("人情",R.drawable.human_favor))
     val incomeTypeList = mutableListOf(
         Type("零花钱",R.drawable.pocket_money),
         Type("利息",R.drawable.interest),

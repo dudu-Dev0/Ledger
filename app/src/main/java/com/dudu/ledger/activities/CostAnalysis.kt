@@ -1,74 +1,97 @@
 package com.dudu.ledger.activities
 
-import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.dudu.ledger.Constants
 import com.dudu.ledger.R
+import com.dudu.ledger.adapters.AnalysisTypeWithProgressAdapter
+import com.dudu.ledger.bean.AnalysisProgress
 import com.dudu.ledger.bean.Ledger
 import com.dudu.ledger.utils.TimeUtils
 import com.dudu.ledger.widgets.AlwaysMarqueeTextView
-import com.dudu.ledger.widgets.PieChartView
-import com.dudu.ledger.widgets.PieChartView.ItemType
 import org.litepal.LitePal
 import org.litepal.extension.find
+
 
 class CostAnalysis : AppCompatActivity() {
     private lateinit var incomeTextView:AlwaysMarqueeTextView
     private lateinit var costTextView:AlwaysMarqueeTextView
-    private lateinit var pieChart:PieChartView
+    private lateinit var recyclerView: RecyclerView
+    private var repeatedPosition = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cost_analysis)
 
         incomeTextView = findViewById(R.id.income_text)
         costTextView = findViewById(R.id.cost_text)
-        pieChart = findViewById(R.id.pie_chart)
+        recyclerView = findViewById(R.id.cost_analysis_recyclerview)
 
         val incomeList = LitePal.where("isCost = ? and month = ?","0",TimeUtils.getMonth().toString()).find<Ledger>()
         val costList = LitePal.where("isCost = ? and month = ?","1",TimeUtils.getMonth().toString()).find<Ledger>()
 
-        var incomeAmount : Double = 0.0
-        var costAmount : Double = 0.0
+        var incomeAmount = 0.0
+        var costAmount = 0.0
 
-        for (i in 0..incomeList.size-1){
-            incomeAmount = incomeAmount + incomeList[i].amount
+        for (i in 0 until incomeList.size){
+            incomeAmount += incomeList[i].amount
         }
-        for (i in 0..costList.size-1){
-            costAmount = costAmount + costList[i].amount
+        for (i in 0 until costList.size){
+            costAmount += costList[i].amount
         }
 
         incomeTextView.text = incomeAmount.toString()
         costTextView.text = costAmount.toString()
 
-        val life = LitePal.where("type = ?","生活便利").find<Ledger>()
-        val play = LitePal.where("type = ?","文玩娱乐").find<Ledger>()
-        val study = LitePal.where("type = ?","学习文具").find<Ledger>()
-        val eat = LitePal.where("type = ?","美食吃喝").find<Ledger>()
+        var list  = mutableListOf<AnalysisProgress>()
 
-        var lifeAmount = 0.0
-        var playAmount = 0.0
-        var studyAmount = 0.0
-        var eatAmount = 0.0
-        for (i in 0..life.size-1){
-            lifeAmount = lifeAmount + life[i].amount
-        }
-        for (i in 0..play.size-1){
-            playAmount = playAmount + play[i].amount
-        }
-        for (i in 0..study.size-1){
-            studyAmount = studyAmount + study[i].amount
-        }
-        for (i in 0..eat.size-1){
-            eatAmount = eatAmount + eat[i].amount
-        }
+        var position = 0
 
-        pieChart.addItemType(ItemType("生活便利", lifeAmount.toFloat(),getRandomColor()[0]))
-        pieChart.addItemType(ItemType("文玩娱乐", playAmount.toFloat(),getRandomColor()[1]))
-        pieChart.addItemType(ItemType("学习文具", studyAmount.toFloat(),getRandomColor()[2]))
-        pieChart.addItemType(ItemType("美食吃喝", eatAmount.toFloat(),getRandomColor()[3]))
+        for(i in 0 until Constants.incomeTypeList.size){
+            var incomeType = Constants.incomeTypeList[i]
+            Log.e("","for *1 ")
+            for (i in 0 until incomeList.size){
+                var incomeAnalysis = 0
+                if (incomeType.text == incomeList[i].type){
+                    val analysisProgress = AnalysisProgress()
+                    analysisProgress.typeText = incomeType.typeText
+                    incomeAnalysis += incomeList[i].amount.toInt()
+                    //if (i == incomeList.size-1) {
+                    analysisProgress.progress = (incomeAnalysis.toFloat() / incomeAmount).toFloat()*100
+                    if (!checkList(list,analysisProgress)) list.add(analysisProgress)
+                    else{
+                        analysisProgress.progress = analysisProgress.progress + list[repeatedPosition].progress
+                        list[repeatedPosition] = analysisProgress
+                        repeatedPosition = 0
+                    }
+                    //}
+
+                }
+            }
+        }
+        /*val a = AnalysisProgress()
+        a.progress = 50F
+        a.typeText = "111"
+        list.add(a)*/
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = AnalysisTypeWithProgressAdapter(list,this)
+        Log.e("",list.size.toString())
     }
-    fun getRandomColor() : List<Int>{
-        val color = mutableListOf<Int>(Color.parseColor("#ff7f27"),Color.parseColor("#00affd"),Color.parseColor("#ffca18"),Color.parseColor("#5cd13e"))
-        return color
+    fun checkList(list: List<AnalysisProgress> ,item: AnalysisProgress) : Boolean {
+        var returnData = false
+        for (i in 0 until list.size) {
+            if (list[i].typeText == item.typeText) {
+                returnData = true
+                repeatedPosition = i
+                break
+            } else {
+                returnData = false
+                break
+            }
+        }
+        return returnData
     }
 }
+
