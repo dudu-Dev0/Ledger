@@ -3,6 +3,7 @@ package com.dudu.ledger.activities
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat.canScrollHorizontally
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dudu.ledger.Constants
@@ -47,8 +48,6 @@ class CostAnalysis : AppCompatActivity() {
 
         var list  = mutableListOf<AnalysisProgress>()
 
-        var position = 0
-
         for(i in 0 until Constants.incomeTypeList.size){
             var incomeType = Constants.incomeTypeList[i]
             Log.e("","for *1 ")
@@ -56,7 +55,7 @@ class CostAnalysis : AppCompatActivity() {
                 var incomeAnalysis = 0
                 if (incomeType.text == incomeList[i].type){
                     val analysisProgress = AnalysisProgress()
-                    analysisProgress.typeText = incomeType.typeText
+                    analysisProgress.typeText = incomeType.typeText         //这段写的有亿点屎，慎看（，能跑就对了
                     incomeAnalysis += incomeList[i].amount.toInt()
                     //if (i == incomeList.size-1) {
                     analysisProgress.progress = (incomeAnalysis.toFloat() / incomeAmount).toFloat()*100
@@ -76,9 +75,12 @@ class CostAnalysis : AppCompatActivity() {
         a.typeText = "111"
         list.add(a)*/
         recyclerView.layoutManager = LinearLayoutManager(this)
+        list.sortByDescending { analysisProgress : AnalysisProgress-> analysisProgress.progress }
         recyclerView.adapter = AnalysisTypeWithProgressAdapter(list,this)
         Log.e("",list.size.toString())
     }
+
+
     fun checkList(list: List<AnalysisProgress> ,item: AnalysisProgress) : Boolean {
         var returnData = false
         for (i in 0 until list.size) {
@@ -93,5 +95,9 @@ class CostAnalysis : AppCompatActivity() {
         }
         return returnData
     }
+    fun initData(){
+
+    }
+
 }
 
