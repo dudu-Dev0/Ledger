@@ -37,7 +37,7 @@
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/grey"
+                            android:textColor="@color/text_grey"
                             android:textSize="18sp"
                             android:text="本月收入"
                             android:singleLine="true"/>
@@ -72,7 +72,7 @@
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/grey"
+                            android:textColor="@color/text_grey"
                             android:textSize="18sp"
                             android:text="本月支出"
                             android:singleLine="true"/>

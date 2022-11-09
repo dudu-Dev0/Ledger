@@ -28,7 +28,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_margin="5dp"
-                    android:background="@drawable/grey_circle_corner">
+                    android:background="@drawable/blue_radio_group">
 
                 <RadioButton
                         android:id="@+id/income_radiobutton"
@@ -101,7 +101,7 @@
 
             <FrameLayout
                     android:id="@+id/choose_type"
-                    android:background="@drawable/card_background"
+                    android:background="@drawable/grey_circle_corner_background"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="5dp">

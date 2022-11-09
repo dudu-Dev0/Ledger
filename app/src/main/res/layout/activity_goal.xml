@@ -61,7 +61,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="已有金额"
-                        android:textColor="@color/grey"/>
+                        android:textColor="@color/text_grey"/>
 
                 <TextView
                         android:id="@+id/existing_amount"
@@ -90,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="目标金额"
-                        android:textColor="@color/grey"/>
+                        android:textColor="@color/text_grey"/>
 
                 <TextView
                         android:id="@+id/target_amount_text"

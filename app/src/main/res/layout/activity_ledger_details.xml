@@ -33,7 +33,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="日期"
-                        android:textColor="@color/grey"/>
+                        android:textColor="@color/text_grey"/>
 
                 <TextView
                         android:id="@+id/detail_date"
@@ -59,7 +59,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="收入/支出"
-                            android:textColor="@color/grey"/>
+                            android:textColor="@color/text_grey"/>
 
                     <TextView
                             android:id="@+id/detail_is_cost"
@@ -80,7 +80,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="操作金额"
-                            android:textColor="@color/grey"/>
+                            android:textColor="@color/text_grey"/>
 
                     <TextView
                             android:id="@+id/detail_amount"
@@ -102,7 +102,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="类型"
-                        android:textColor="@color/grey"/>
+                        android:textColor="@color/text_grey"/>
 
                 <TextView
                         android:id="@+id/detail_type"
@@ -123,7 +123,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="备注"
-                        android:textColor="@color/grey"/>
+                        android:textColor="@color/text_grey"/>
 
                 <TextView
                         android:id="@+id/detail_remark"
