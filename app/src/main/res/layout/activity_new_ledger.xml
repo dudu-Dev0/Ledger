@@ -68,6 +68,7 @@
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
                     android:textSize="25dp"
+                    android:textColor="@color/white"
                     android:padding="5dp"
                     android:digits="1234567890."
                     android:singleLine="true"/>
@@ -87,6 +88,7 @@
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
                     android:textSize="25dp"
+                    android:textColor="@color/white"
                     android:padding="5dp"
                     android:singleLine="true"/>
 

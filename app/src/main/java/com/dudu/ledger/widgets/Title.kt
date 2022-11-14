@@ -14,11 +14,12 @@ import com.dudu.ledger.activities.Menu
 import com.dudu.ledger.activities.NewLedgerActivity
 
 class Title(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs) {
+    var ta = context.obtainStyledAttributes(attrs, R.styleable.Title)
+    var text = ta.getString(R.styleable.Title_titleText)
+    val buttonVis = ta.getString(R.styleable.Title_buttonVis)
     init {
+        ta = context.obtainStyledAttributes(attrs, R.styleable.Title)
         LayoutInflater.from(context).inflate(R.layout.watch_title, this)
-        val ta = context.obtainStyledAttributes(attrs, R.styleable.Title)
-        val text = ta.getString(R.styleable.Title_titleText)
-        val buttonVis = ta.getString(R.styleable.Title_buttonVis)
         ta.recycle()
         val titleText = findViewById<TextView>(R.id.title_text)
         val titleMenuButton = findViewById<ImageButton>(R.id.title_button_menu)
@@ -46,4 +47,5 @@ class Title(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs
             titleNewButton.visibility = GONE
         }
     }
+
 }

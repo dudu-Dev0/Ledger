@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.21875" />
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/drawable/black_circle_corner.xml" value="0.119" />
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/drawable/blue_button.xml" value="0.12" />
         <entry key="..\:/JavaProject/Ledger/app/src/main/res/drawable/blue_circle_corner_right.xml" value="0.198" />
@@ -38,16 +39,21 @@
         <entry key="app/src/main/res/drawable/grey_circle_corner.xml" value="0.1915" />
         <entry key="app/src/main/res/drawable/grey_circle_corner_background.xml" value="0.1915" />
         <entry key="app/src/main/res/drawable/grey_circle_corner_left.xml" value="0.1915" />
+        <entry key="app/src/main/res/drawable/into.xml" value="0.1915" />
         <entry key="app/src/main/res/drawable/ledger_sort_radio_background.xml" value="0.1915" />
+        <entry key="app/src/main/res/drawable/living_payment.xml" value="0.1915" />
+        <entry key="app/src/main/res/drawable/medical.xml" value="0.1915" />
         <entry key="app/src/main/res/drawable/shopping.xml" value="0.185" />
         <entry key="app/src/main/res/layout/activity_cost_analysis.xml" value="0.15217391304347827" />
         <entry key="app/src/main/res/layout/activity_do_you_really_want_to_delete.xml" value="0.15217391304347827" />
         <entry key="app/src/main/res/layout/activity_goal.xml" value="0.14322916666666666" />
         <entry key="app/src/main/res/layout/activity_ledger_details.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_ledger_filter.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_more_option.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_new_goal.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_new_ledger.xml" value="0.2390625" />
         <entry key="app/src/main/res/layout/activity_type_picker.xml" value="0.15217391304347827" />
         <entry key="app/src/main/res/layout/cost_analysis_progress_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/ledger_item.xml" value="0.1" />

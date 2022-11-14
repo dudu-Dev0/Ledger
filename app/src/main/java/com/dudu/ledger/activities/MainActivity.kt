@@ -34,4 +34,9 @@ class MainActivity : AppCompatActivity() {
         ledgerRecyclerView.layoutManager = LinearLayoutManager(this)
         ledgerRecyclerView.adapter = LedgerAdapter(ledgerList)
     }
+
+    override fun onResume() {
+        super.onResume()
+        initData()
+    }
 }

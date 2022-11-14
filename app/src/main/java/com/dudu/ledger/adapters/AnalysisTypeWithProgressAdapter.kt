@@ -3,6 +3,8 @@ package com.dudu.ledger.adapters
 import android.app.Activity
 import android.content.Intent
 import android.graphics.drawable.Drawable
+import android.os.Build
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,9 +16,14 @@ import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
 import com.dudu.ledger.AddClickScale
 import com.dudu.ledger.MyContext
 import com.dudu.ledger.R
+import com.dudu.ledger.activities.LedgerFilterActivity
 import com.dudu.ledger.bean.AnalysisProgress
+import com.dudu.ledger.bean.Ledger
 import com.dudu.ledger.bean.Type
 import de.hdodenhof.circleimageview.CircleImageView
+import org.litepal.LitePal
+import org.litepal.extension.find
+import java.io.Serializable
 import java.math.RoundingMode
 import java.text.DecimalFormat
 
@@ -31,7 +38,14 @@ class AnalysisTypeWithProgressAdapter (val analysisList: List<AnalysisProgress>,
         val viewHolder = ViewHolder(view)
 
         viewHolder.itemView.setOnClickListener {
-
+            val intent = Intent(MyContext.context,LedgerFilterActivity::class.java)
+            if((Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)){
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            intent.putExtra("ledger",(LitePal.where("type=?",viewHolder.type.text.toString()).find<Ledger>()) as Serializable)
+            intent.putExtra("title_string", viewHolder.type.text.toString())
+            Log.e("debug",LitePal.toString())
+            MyContext.context.startActivity(intent)
         }
         return viewHolder
     }
@@ -50,3 +64,4 @@ class AnalysisTypeWithProgressAdapter (val analysisList: List<AnalysisProgress>,
 
 
 }
+

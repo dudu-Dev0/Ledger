@@ -15,6 +15,9 @@
             android:theme="@style/CommonTheme"
             tools:targetApi="33">
         <activity
+                android:name=".activities.LedgerFilterActivity"
+                android:exported="false"/>
+        <activity
                 android:name=".activities.GoalActivity"
                 android:exported="false"/>
         <activity

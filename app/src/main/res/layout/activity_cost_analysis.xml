@@ -93,6 +93,35 @@
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>
+        <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:background="@drawable/blue_radio_group">
+
+            <RadioButton
+                    android:id="@id/income_radiobutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:text="收入"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:background="@drawable/ledger_sort_radio_background"/>
+
+            <RadioButton
+                    android:id="@id/cost_radiobutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:text="支出"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:background="@drawable/ledger_sort_radio_background"/>
+        </RadioGroup>
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cost_analysis_recyclerview"
             android:layout_width="match_parent"
