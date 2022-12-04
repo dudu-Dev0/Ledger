@@ -1,40 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tool"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:tools1="http://schemas.android.com/tools"
-        android:orientation="vertical">
+        android:orientation="horizontal">
     <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp">
-    <TextView
-            android:id="@+id/text_type_analysis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start|center"
-            android:textSize="10sp"
-            android:textColor="@color/white"/>
-    <TextView
-            android:id="@+id/analysis_progress_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:layout_gravity="end|center"/>
+            android:layout_margin="3dp"
+            android:layout_gravity="center"
+            android:background="@drawable/blue_button">
+        
+        <ImageView
+                android:id="@+id/type_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleX="0.6"
+                android:scaleY="0.6"/>
     </FrameLayout>
-    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
-            android:id="@+id/analysis_progressbar"
-            android:layout_margin="5dp"
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            app:rcRadius="10dp"
-            app:rcBackgroundColor="@color/list_item_grey"
-            app:rcProgressColor="@color/blue"
-            app:rcAnimationEnable="true"
-            app:rcAnimationSpeedScale="0.9"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp">
+        
+            <TextView
+                    android:id="@+id/text_type_analysis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"/>
+        
+            <TextView
+                    android:id="@+id/analysis_progress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_gravity="end|center"/>
+        </FrameLayout>
+        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                android:id="@+id/analysis_progressbar"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:rcRadius="10dp"
+                app:rcBackgroundColor="@color/list_item_grey"
+                app:rcProgressColor="@color/blue"
+                app:rcAnimationEnable="true"
+                app:rcAnimationSpeedScale="0.9"/>
+    </LinearLayout>
+    
+    
 </LinearLayout>

@@ -34,6 +34,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', "*.aar"])
     implementation 'com.akexorcist:round-corner-progress-bar:2.1.2'
+    implementation 'com.jieWang:Muti-Barrage:+'
     implementation 'com.yan:pullrefreshlayout:3.0.1'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'org.litepal.guolindev:core:3.2.3'

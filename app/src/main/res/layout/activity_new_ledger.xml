@@ -6,9 +6,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".activities.NewLedgerActivity">
+        tools:context=".ui.activities.NewLedgerActivity">
 
-    <com.dudu.ledger.widgets.Title
+    <com.dudu.ledger.ui.widgets.Title
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:buttonVis="GONE"

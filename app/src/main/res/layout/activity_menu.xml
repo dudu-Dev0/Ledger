@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".activities.Menu">
+        tools:context=".ui.activities.Menu">
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +33,29 @@
                     android:textColor="@color/white"
                     android:layout_gravity="center"/>
         </LinearLayout>
-
+        <LinearLayout
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="3dp"
+                android:visibility="gone"
+                android:background="@drawable/grey_circle_corner_background">
+        
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/search"/>
+        
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="搜索账单"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
+        </LinearLayout>
+    
         <LinearLayout
                 android:id="@+id/goal"
                 android:layout_width="match_parent"

@@ -11,39 +11,53 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context=".activities.GoalActivity">
+            tools:context=".ui.activities.GoalActivity">
 
-        <com.dudu.ledger.widgets.Title
+        <com.dudu.ledger.ui.widgets.Title
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:buttonVis="GONE"
                 app:titleText="我的计划"/>
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+                <com.dudu.ledger.ui.widgets.AlwaysMarqueeTextView
+                        android:id="@+id/my_goal_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="35sp"
+                        android:text="[计划]"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:scrollHorizontally="true"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:ellipsize="marquee"
+                        android:singleLine="true"/>
+    
+                <com.dudu.ledger.ui.widgets.WaveProgress
+                        android:id="@+id/wave_progress"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center"
+                        app:maxValue="100"
+                        app:circleWidth="10dp"
+                        app:valueSize="25sp"
+                        app:circleColor="@color/blue"/>
+            </LinearLayout>
+            <com.orient.tea.barragephoto.ui.BarrageView
+                    android:id="@+id/danmaku"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
-        <com.dudu.ledger.widgets.AlwaysMarqueeTextView
-                android:id="@+id/my_goal_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:textSize="35sp"
-                android:text="[计划]"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:scrollHorizontally="true"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:ellipsize="marquee"
-                android:singleLine="true"/>
-
-        <com.dudu.ledger.widgets.WaveProgress
-                android:id="@+id/wave_progress"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_gravity="center"
-                app:maxValue="100"
-                app:circleWidth="10dp"
-                app:valueSize="25sp"
-                app:circleColor="@color/blue"/>
-
+        </FrameLayout>
+        
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,16 +122,30 @@
                         android:singleLine="true"/>
             </LinearLayout>
         </LinearLayout>
-
-        <Button
-                android:id="@+id/complete_the_goal"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:text="计划完成"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:textColor="@color/white"
-                android:background="@drawable/blue_button"
-                android:visibility="gone"/>
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <Button
+                    android:id="@+id/complete_the_goal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="计划完成"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/blue_button"
+                    android:visibility="gone"/>
+    
+            <Button
+                    android:id="@+id/bt_save_money"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="存钱"
+                    android:background="@drawable/blue_button"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/white"
+                    android:layout_weight="1"/>
+        </FrameLayout>
+        
     </LinearLayout>
 </ScrollView>

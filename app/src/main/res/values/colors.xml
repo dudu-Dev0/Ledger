@@ -13,4 +13,5 @@
     <color name="grey">#3d3c3c</color>
     <color name="text_grey">#949494</color>
     <color name="list_item_grey">#262626</color>
+    <color name="red">#D50000</color>
 </resources>

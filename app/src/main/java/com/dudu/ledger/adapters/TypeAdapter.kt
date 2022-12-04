@@ -2,22 +2,19 @@ package com.dudu.ledger.adapters
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.dudu.ledger.AddClickScale
-import com.dudu.ledger.MyContext
+import com.dudu.ledger.utils.AddClickScale
 import com.dudu.ledger.R
 import com.dudu.ledger.bean.Type
-import de.hdodenhof.circleimageview.CircleImageView
 
 class TypeAdapter (val typeList: List<Type>,val activity: Activity) : RecyclerView.Adapter<TypeAdapter.ViewHolder>(){
     inner class ViewHolder(view: View):RecyclerView.ViewHolder(view){
-        val img : CircleImageView = view.findViewById(R.id.type_img)
+        val img : ImageView = view.findViewById(R.id.type_img)
         val text : TextView = view.findViewById(R.id.type_text)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TypeAdapter.ViewHolder {

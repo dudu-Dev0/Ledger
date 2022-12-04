@@ -12,13 +12,14 @@
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="3dp"
             android:background="@drawable/blue_button">
         
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
                 android:id="@+id/type_img"
                 android:layout_width="30dp"
-                android:layout_height="30dp"/>
+                android:layout_height="30dp"
+                android:scaleX="0.6"
+                android:scaleY="0.6"/>
     </FrameLayout>
     
     <TextView

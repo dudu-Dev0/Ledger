@@ -2,56 +2,64 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="com.dudu.ledger">
-
+    
     <application
-            android:name=".MyContext"
+            android:name=".utils.MyContext"
             android:allowBackup="true"
             android:dataExtractionRules="@xml/data_extraction_rules"
             android:fullBackupContent="@xml/backup_rules"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/CommonTheme"
             tools:targetApi="33">
         <activity
-                android:name=".activities.LedgerFilterActivity"
+                android:name=".ui.activities.NumericKeyboardActivity"
                 android:exported="false"/>
         <activity
-                android:name=".activities.GoalActivity"
+                android:name=".ui.activities.FollowUpTheGoalActivity"
                 android:exported="false"/>
         <activity
-                android:name=".activities.NewGoal"
+                android:name=".ui.activities.SearchActivity"
                 android:exported="false"/>
         <activity
-                android:name=".activities.DoYouReallyWantToDelete"
+                android:name=".ui.activities.LedgerFilterActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".ui.activities.GoalActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".ui.activities.NewGoal"
+                android:exported="false"/>
+        <activity
+                android:name=".ui.activities.DoYouReallyWantToDelete"
                 android:exported="false"
                 android:theme="@style/ThemeWithoutAnim"/>
         <activity
-                android:name=".activities.MoreOption"
+                android:name=".ui.activities.MoreOption"
                 android:exported="false"
                 android:theme="@style/ThemeWithoutAnim"/>
         <activity
-                android:name=".activities.CostAnalysis"
+                android:name=".ui.activities.CostAnalysis"
                 android:exported="false"/>
         <activity
-                android:name=".activities.Menu"
+                android:name=".ui.activities.Menu"
                 android:exported="false"/>
         <activity
-                android:name=".activities.LedgerDetails"
+                android:name=".ui.activities.LedgerDetails"
                 android:exported="false"/>
         <activity
-                android:name=".activities.TypePicker"
+                android:name=".ui.activities.TypePicker"
                 android:exported="false"/>
         <activity
-                android:name=".activities.NewLedgerActivity"
+                android:name=".ui.activities.NewLedgerActivity"
                 android:exported="false"/>
         <activity
-                android:name=".activities.MainActivity"
+                android:name=".ui.activities.MainActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
+    
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>

@@ -9,11 +9,11 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.dudu.ledger.AddClickScale
-import com.dudu.ledger.MyContext
+import com.dudu.ledger.utils.AddClickScale
+import com.dudu.ledger.utils.MyContext
 import com.dudu.ledger.R
-import com.dudu.ledger.activities.LedgerDetails
-import com.dudu.ledger.activities.MoreOption
+import com.dudu.ledger.ui.activities.LedgerDetails
+import com.dudu.ledger.ui.activities.MoreOption
 import com.dudu.ledger.bean.Ledger
 
 class LedgerAdapter(val ledgerList: List<Ledger>) : RecyclerView.Adapter<LedgerAdapter.ViewHolder>(){
@@ -31,7 +31,7 @@ class LedgerAdapter(val ledgerList: List<Ledger>) : RecyclerView.Adapter<LedgerA
         viewHolder.ledgerItem.setOnClickListener {
             val position = viewHolder.adapterPosition
             val ledger = ledgerList[position]
-            val intent = Intent(MyContext.context,LedgerDetails::class.java)
+            val intent = Intent(MyContext.context, LedgerDetails::class.java)
             if((Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)){
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
@@ -41,7 +41,7 @@ class LedgerAdapter(val ledgerList: List<Ledger>) : RecyclerView.Adapter<LedgerA
         viewHolder.ledgerItem.setOnLongClickListener{
             val position = viewHolder.adapterPosition
             val ledger = ledgerList[position]
-            val intent = Intent(MyContext.context,MoreOption::class.java)
+            val intent = Intent(MyContext.context, MoreOption::class.java)
             if((Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)){
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
@@ -67,5 +67,6 @@ class LedgerAdapter(val ledgerList: List<Ledger>) : RecyclerView.Adapter<LedgerA
         holder.ledgerAmount.text = "${ledger.amount}元"
         holder.ledgerDate.text = "${ledger.year}年${ledger.month}月${ledger.day}日${ledger.hour}时${ledger.minute}分"
         AddClickScale.addClickScale(holder.itemView)
+        //holder.itemView.animation = AnimationUtils.loadAnimation(MyContext.context,R.anim.recyclerview_anim_fall_down)
     }
 }
