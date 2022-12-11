@@ -15,12 +15,12 @@ import com.dudu.ledger.R
 import com.dudu.ledger.ui.activities.LedgerDetails
 import com.dudu.ledger.ui.activities.MoreOption
 import com.dudu.ledger.bean.Ledger
+import com.dudu.ledger.utils.Constants
 
 class LedgerAdapter(val ledgerList: List<Ledger>) : RecyclerView.Adapter<LedgerAdapter.ViewHolder>(){
     inner class ViewHolder(view: View):RecyclerView.ViewHolder(view){
         val ledgerItem:FrameLayout = view.findViewById(R.id.ledger_item)
-        val ledgerSort:TextView = view.findViewById(R.id.ledger_sort)
-        val ledgerSortImage:ImageView = view.findViewById(R.id.ledger_sort_image)
+        val ledgerTypeImg:ImageView = view.findViewById(R.id.type_img)
         val ledgerAmount:TextView = view.findViewById(R.id.ledger_amount)
         val ledgerDate:TextView = view.findViewById(R.id.ledger_date)
     }
@@ -57,15 +57,13 @@ class LedgerAdapter(val ledgerList: List<Ledger>) : RecyclerView.Adapter<LedgerA
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val ledger = ledgerList[position]
-        if(ledger.isCost){
-            holder.ledgerSort.text = "支出"
-            holder.ledgerSortImage.setImageResource(R.drawable.cost)
-        }else{
-            holder.ledgerSort.text = "收入"
-            holder.ledgerSortImage.setImageResource(R.drawable.income)
+        for (i in if (ledger.isCost) Constants.costTypeList else Constants.incomeTypeList){
+            if (i.typeText == ledger.type!!){
+                holder.ledgerTypeImg.background = MyContext.context.getDrawable(i.pic)
+            }
         }
-        holder.ledgerAmount.text = "${ledger.amount}元"
-        holder.ledgerDate.text = "${ledger.year}年${ledger.month}月${ledger.day}日${ledger.hour}时${ledger.minute}分"
+        holder.ledgerAmount.text = "${if(ledger.isCost) "-" else "+"}${ledger.amount}元"
+        holder.ledgerDate.text = "${ledger.day}日${ledger.hour}时${ledger.minute}分"
         AddClickScale.addClickScale(holder.itemView)
         //holder.itemView.animation = AnimationUtils.loadAnimation(MyContext.context,R.anim.recyclerview_anim_fall_down)
     }

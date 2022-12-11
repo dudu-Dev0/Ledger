@@ -1,11 +1,13 @@
 package com.dudu.ledger.ui.activities
 
 import android.os.Bundle
+import android.util.Log
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dudu.ledger.R
+import com.dudu.ledger.adapters.DateLedgerAdapter
 import com.dudu.ledger.adapters.LedgerAdapter
 import com.dudu.ledger.bean.Ledger
 import org.litepal.LitePal
@@ -32,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             ledgerList = LitePal.findAll<Ledger>()
             Collections.reverse(ledgerList)
             ledgerRecyclerView.layoutManager = LinearLayoutManager(this)
-            ledgerRecyclerView.adapter = LedgerAdapter(ledgerList)
+            ledgerRecyclerView.adapter = DateLedgerAdapter(ledgerList,this)
         }
     }
 

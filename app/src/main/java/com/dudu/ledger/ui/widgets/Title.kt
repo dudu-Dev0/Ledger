@@ -24,6 +24,7 @@ class Title(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs
         val titleText = findViewById<TextView>(R.id.title_text)
         val titleMenuButton = findViewById<ImageButton>(R.id.title_button_menu)
         val titleNewButton = findViewById<ImageButton>(R.id.title_button_new)
+        val titleFilterButton = findViewById<ImageButton>(R.id.title_button_filter)
         titleText.text = text
         titleMenuButton.setOnClickListener {
             val intent = Intent(MyContext.context, Menu::class.java)
@@ -42,9 +43,11 @@ class Title(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs
         if (buttonVis == "VISIBLE") {
             titleMenuButton.visibility = VISIBLE
             titleNewButton.visibility = VISIBLE
+            titleFilterButton.visibility = VISIBLE
         } else {
             titleMenuButton.visibility = GONE
             titleNewButton.visibility = GONE
+            titleFilterButton.visibility = GONE
         }
     }
 

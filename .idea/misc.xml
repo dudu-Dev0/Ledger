@@ -39,10 +39,12 @@
         <entry key="app/src/main/res/drawable/cost_analysis.xml" value="0.1995" />
         <entry key="app/src/main/res/drawable/danmaku_background.xml" value="0.131" />
         <entry key="app/src/main/res/drawable/edittext_background.xml" value="0.33" />
+        <entry key="app/src/main/res/drawable/filter.xml" value="0.1325" />
         <entry key="app/src/main/res/drawable/food.xml" value="0.112" />
         <entry key="app/src/main/res/drawable/grey_circle_corner.xml" value="0.1915" />
         <entry key="app/src/main/res/drawable/grey_circle_corner_background.xml" value="0.1915" />
         <entry key="app/src/main/res/drawable/grey_circle_corner_left.xml" value="0.1915" />
+        <entry key="app/src/main/res/drawable/icon_clear.xml" value="0.1325" />
         <entry key="app/src/main/res/drawable/into.xml" value="0.1915" />
         <entry key="app/src/main/res/drawable/ledger_sort_radio_background.xml" value="0.1915" />
         <entry key="app/src/main/res/drawable/living_payment.xml" value="0.1915" />
@@ -66,9 +68,13 @@
         <entry key="app/src/main/res/layout/adapter_keyboard.xml" value="0.11875" />
         <entry key="app/src/main/res/layout/cost_analysis_progress_item.xml" value="0.5" />
         <entry key="app/src/main/res/layout/danmaku_item.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/date_ledger.xml" value="0.11927083333333334" />
+        <entry key="app/src/main/res/layout/date_ledger_item.xml" value="0.1203125" />
         <entry key="app/src/main/res/layout/fragment_analysis_cost.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_analysis_income.xml" value="0.17844202898550723" />
-        <entry key="app/src/main/res/layout/ledger_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_date_ledger.xml" value="0.11927083333333334" />
+        <entry key="app/src/main/res/layout/ledger_date_item.xml" value="0.12083333333333333" />
+        <entry key="app/src/main/res/layout/ledger_item.xml" value="0.22" />
         <entry key="app/src/main/res/layout/type_item.xml" value="0.5" />
         <entry key="app/src/main/res/layout/watch_title.xml" value="0.22" />
       </map>
