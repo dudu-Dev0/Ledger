@@ -41,39 +41,6 @@ class DateLedgerAdapter(val ledgerList: List<Ledger>,val activity: Activity) : R
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        //thread {
-            val collectYear: Map<Int, List<Ledger>> =
-                ledgerList.stream().collect(Collectors.groupingBy(Ledger::year))
-            val years = mutableListOf<Int>()
-            for (i in ledgerList){
-                for (year in years){
-                    if (year != i.year){
-                        years.add(i.year)
-                    }
-                }
-
-            }
-            for (year in years){
-                val collectMonth: Map<Int, List<Ledger>> =
-                    collectYear[2022]!!.stream().collect(Collectors.groupingBy(Ledger::month))
-                Log.e("",collectYear.toString())
-                Log.e("",collectMonth.toString())
-                val months = mutableListOf<Int>()
-                for (a in ledgerList){
-                    for (month in months){
-                        if (month != a.month){
-                            months.add(a.month)
-                        }
-                    }
-                }
-                for (month in months){
-                    holder.dateText.text = "${year}年${month}月"
-                    holder.recyclerView.layoutManager = LinearLayoutManager(activity)
-                    holder.recyclerView.adapter = LedgerAdapter(collectMonth[12]!!)
-                    holder.recyclerView.isNestedScrollingEnabled = false
-                }
-            //}
-        }
 
     }
 }

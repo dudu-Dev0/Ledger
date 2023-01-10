@@ -24,4 +24,6 @@ class Ledger : LitePalSupport(), Serializable {
             : String? = null
     var remark //备注
             : String? = null
+    val date
+            =year.toString()+month.toString()
 }
